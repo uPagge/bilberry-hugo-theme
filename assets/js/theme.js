@@ -204,7 +204,7 @@ $(document).ready(function () {
     moment.locale(language);
     $('.moment').each(function() {
         date = $(this).text()
-        $(this).text(moment(date).format('LL'))
+        $(this).text(moment(date).fromNow())
     });
 });
 

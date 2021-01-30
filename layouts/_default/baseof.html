@@ -107,8 +107,7 @@
     {{ partial "mathjax.html" . }}
     {{ end }}
 
-
-    <script type="text/javascript" src="{{ "theme.js" | absURL }}"></script>
+    {{- partial "assets.html" . -}}
 
     {{ if isset .Site.Params "js_modules" }}
     {{ range .Site.Params.js_modules }}
@@ -119,6 +118,7 @@
     {{ if and (isset .Site.Params "algolia_search") (eq .Site.Params.algolia_search true) }}
     {{ partial "algolia-search.html" . }}
     {{ end }}
+
 </body>
 
 </html>

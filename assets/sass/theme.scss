@@ -2,21 +2,21 @@
 @import "variables";
 
 // Dependencies
-@import 'lib/normalize';
-@import 'lib/skeleton';
-@import 'lib/fontawesome/scss/brands';
-@import 'lib/fontawesome/scss/regular';
-@import 'lib/fontawesome/scss/solid';
-@import 'lib/fontawesome/scss/fontawesome';
-@import 'lib/flexslider';
-@import 'lib/tooltipster.bundle';
-@import 'lib/tooltipster-sideTip-light';
-//@import "lib/magnific-popup";
-@import '_fontface';
+@import '~normalize.css/normalize.css';
+@import '~skeleton-css/css/skeleton.css';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~flexslider/flexslider.css';
+@import '~tooltipster/dist/css/tooltipster.bundle.css';
+@import '~tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-light.min.css';
+@import "~magnific-popup";
+@import 'fontface';
 
 // Choose one of the supported syntax highlighting styles
 // https://highlightjs.org/static/demo/
-@import 'lib/zenburn';
+@import '~highlight.js/scss/zenburn.scss';
 
 // Basic bilberry styling
 @import 'bilberry-hugo-theme';
