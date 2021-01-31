@@ -22,5 +22,6 @@
     {{ end }}
 
     {{ partial "default-content.html" (dict "ctx" .ctx "template_type" .template_type) }}
+    {{ partial "plugin/share.html" .ctx }}
     {{ partial "article-footer.html" .ctx }}
 </article>
