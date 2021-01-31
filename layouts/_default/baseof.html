@@ -103,6 +103,11 @@
 
     {{ template "_internal/google_analytics_async.html" . }}
 
+    {{- /* Advertising */ -}}
+    {{- with .Site.Params.Advertising.Google.Client -}}
+    <script data-ad-client="{{ . }}" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    {{- end -}}
+
     {{ partial "yandex_analytics.html" . }}
 
     {{ if and (isset .Site.Params "enable_mathjax") (eq .Site.Params.enable_mathjax true) }}
