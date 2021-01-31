@@ -24,7 +24,7 @@
             <div class="titles">
                 <h3 class="title">
                     <a href="{{ .Site.BaseURL | relLangURL }}">
-                        {{ .Site.Title | default "My cool new blog" }}
+                        {{ .Site.Params.Header.Title | default "My cool new blog" | safeHTML }}
                     </a>
                 </h3>
 
