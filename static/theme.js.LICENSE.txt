@@ -50,6 +50,17 @@
 
 /*! tooltipster v4.2.8 */
 
+/**
+ * @preserve
+ * Sharer.js
+ *
+ * @description Create your own social share buttons
+ * @version 0.4.1
+ * @author Ellison Leao <ellisonleao@gmail.com>
+ * @license GPLv3
+ *
+ */
+
 //! moment.js
 
 //! moment.js language configuration

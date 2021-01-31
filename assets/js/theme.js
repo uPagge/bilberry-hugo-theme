@@ -5,6 +5,7 @@ require('algoliasearch/dist/algoliasearch.jquery');
 require('autocomplete.js/dist/autocomplete.jquery');
 require('tooltipster');
 require('magnific-popup');
+require('sharer.js');
 
 let ClipboardJs = require('clipboard')
 let hljs = require('highlight.js');

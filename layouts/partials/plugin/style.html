@@ -7,6 +7,7 @@
     {{- if $href | and (not (urls.Parse $href).Host) -}}
         {{- $resource = resources.Get $href -}}
     {{- end -}}
+
     {{- with .Content -}}
         {{- $resource = resources.FromString $.Path . -}}
     {{- end -}}
@@ -22,7 +23,7 @@
             {{- $resource = $resource | minify -}}
         {{- end -}}
         {{- with .Fingerprint -}}
-            {{- $resource = $resource | fingerprint . -}}
+            {{- $resource = $resource | fingerprint "sha256" -}}
             {{- $integrity = $resource.Data.Integrity -}}
         {{- end -}}
         {{- $href = $resource.RelPermalink -}}

@@ -7,7 +7,8 @@
     "laravel-mix": "^5.0.5",
     "magnific-popup": "github:Lednerb/Magnific-Popup",
     "normalize.css": "^8.0.1",
-    "tooltipster": "^4.2.8"
+    "tooltipster": "^4.2.8",
+    "sharer.js": "^0.4.1"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.14.0",

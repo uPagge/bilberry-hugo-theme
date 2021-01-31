@@ -1,5 +1,5 @@
 {{ define "main" }}
-<div class="main">
+<div class="main container">
     <div class="article-wrapper u-cf single">
         {{  if or (fileExists (print "layouts/partials/content-type/" .Type ".html") ) (fileExists (print "themes/bilberry-hugo-theme/layouts/partials/content-type/" .Type ".html")) }}
             {{ partial (print "content-type/" .Type ".html") (dict "ctx" . "template_type" "single") }}
@@ -8,12 +8,25 @@
         {{ end }}
     </div>
 
+    <div class="article-wrapper">
+        <a class="bubble" href="#">
+            <i class="fas fa-fw fa-ad"></i>
+        </a>
+        <div class="container-box">
+        </div>
+    </div>
+
     {{ if ( .Params.showComments | default true ) }}
-        <div id="comments-container">
+    <div class="article-wrapper">
+    <a class="bubble" href="#comments-container">
+        <i class="fas fa-fw fa-comment"></i>
+    </a>
+        <div id="comments-container" class="container-box">
             {{ template "_internal/disqus.html" . }}
             {{ partial "commento.html" . }}
             {{ partial "remark42.html" . }}
         </div>
+    </div>
     {{ end }}
 </div>
 {{ end }}
