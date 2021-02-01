@@ -70,6 +70,10 @@ article {
             font-weight: bold;
         }
 
+        p:last-child {
+            margin-bottom: 0;
+        }
+
         .meta {
             text-transform: uppercase;
             font-style: normal;

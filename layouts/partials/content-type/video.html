@@ -2,7 +2,11 @@
     <i class="fas fa-fw {{or .ctx.Params.icon "fa-video" }}"></i>
 </a>
 
+{{ $noMetaShow := or (eq .ctx.Params.showDate true) (eq .ctx.Site.Params.showReadingTime true) (ne .ctx.Params.author nil) (ne .ctx.Params.categories nil)}}
+
+
 <article class="video">
+
     {{ partial "featured-image.html" .ctx }}
 
     {{ with .ctx.Params.youtube }}
@@ -21,7 +25,7 @@
         {{ partial "video-embed" (dict "type" "mp4" "url" .ctx.Params.mp4video "imageUrl" .ctx.Params.mp4videoImage) }}
     {{ end }}
 
-    {{ partial "default-content.html" (dict "ctx" .ctx "template_type" .template_type) }}
+    {{ partial "default-content.html" (dict "ctx" .ctx "template_type" .template_type "noMetaShow" $noMetaShow) }}
     {{ partial "plugin/share.html" .ctx }}
     {{ partial "article-footer.html" .ctx }}
 </article>

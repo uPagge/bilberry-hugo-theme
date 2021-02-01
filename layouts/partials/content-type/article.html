@@ -7,9 +7,11 @@
 {{ end }}
 </a>
 
+{{ $noMetaShow := or (eq .ctx.Params.showDate true) (eq .ctx.Site.Params.showReadingTime true) (ne .ctx.Params.author nil) (ne .ctx.Params.categories nil)}}
+
 <article class="default article">
     {{ partial "featured-image.html" .ctx }}
-    {{ partial "default-content.html" (dict "ctx" .ctx "template_type" .template_type) }}
+    {{ partial "default-content.html" (dict "ctx" .ctx "template_type" .template_type "noMetaShow" $noMetaShow)  }}
     {{ partial "plugin/share.html" .ctx }}
     {{ partial "article-footer.html" .ctx }}
 </article>

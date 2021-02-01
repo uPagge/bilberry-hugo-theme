@@ -1,4 +1,4 @@
-{{- $share := $.Site.Params.Page.Share | default dict -}}
+{{- $share := .Params.Page.Share | default $.Site.Params.Page.Share | default dict -}}
 {{- if $share.enable -}}
 <div class="post-info-share">
     {{- /* 000: Telegram */ -}}

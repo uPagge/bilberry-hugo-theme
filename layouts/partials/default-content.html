@@ -1,10 +1,16 @@
+{{ $noContent := or .noMetaShow (ne .ctx.Content "") (ne .ctx.Title "")}}
+
+{{ if $noContent }}
 <div class="content">
+    {{ if ne .ctx.Title "" }}
     <h1 class="article-title">
         <a href="{{ .ctx.Permalink }}">
             {{ .ctx.Title }}
         </a>
     </h1>
+    {{ end }}
 
+    {{ if eq .noMetaShow true }}
     <div class="meta">
         {{ if ( .ctx.Params.showDate | default true ) }}
             {{ if and ( .ctx.Site.Params.enableMomentJs | default true ) (le (now.Sub (time .ctx.PublishDate)).Hours 336)  }}
@@ -42,6 +48,7 @@
             </span>
         {{ end }}
     </div>
+    {{ end }}
 
     {{ if or (eq .template_type "single") (.ctx.Params.noSummary | default $.ctx.Site.Params.Page.NoSummary) }}
         {{ if and (gt .ctx.WordCount .ctx.Site.Params.tocMinWordCount ) (.ctx.Params.toc) }}
@@ -49,7 +56,9 @@
             {{ .ctx.TableOfContents }}
         {{ end }}
 
+
         {{ .ctx.Content }}
+
     {{ else }}
         {{ .ctx.Summary }}
 
@@ -58,3 +67,4 @@
         {{ end }}
     {{ end }}
 </div>
+{{ end }}
