@@ -47,7 +47,7 @@
 
 {{ if eq .type "mp4" }}
     <div class="responsive-video local">
-        <video width="100%" controls poster="{{ .imageUrl }}">
+        <video width="100%" controls poster="{{ .imageUrl }}" {{ if eq .mp4settings.autoplay true }} autoplay {{ end }} {{ if eq .mp4settings.loop true}} loop {{ end }}>
             <source src="{{ .url }}" type="video/mp4">
 
             Your browser does not support the video tag.

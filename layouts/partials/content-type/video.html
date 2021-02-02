@@ -22,7 +22,7 @@
     {{ end }}
 
     {{ if isset .ctx.Params "mp4video" }}
-        {{ partial "video-embed" (dict "type" "mp4" "url" .ctx.Params.mp4video "imageUrl" .ctx.Params.mp4videoImage) }}
+        {{ partial "video-embed" (dict "type" "mp4" "url" .ctx.Params.mp4video "imageUrl" .ctx.Params.mp4videoImage "mp4settings" .ctx.Params.mp4settings) }}
     {{ end }}
 
     {{ partial "default-content.html" (dict "ctx" .ctx "template_type" .template_type "noMetaShow" $noMetaShow) }}
