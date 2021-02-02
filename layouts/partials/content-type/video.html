@@ -7,8 +7,6 @@
 
 <article class="video">
 
-    {{ partial "featured-image.html" .ctx }}
-
     {{ with .ctx.Params.youtube }}
         {{ partial "video-embed" (dict "type" "youtube" "id" .) }}
     {{ end }}
