@@ -1,6 +1,6 @@
 {{ define "main" }}
 <div class="main container">
-    <div class="article-wrapper u-cf single">
+    <div class="article-wrapper article-position article-list u-cf single">
         {{  if or (fileExists (print "layouts/partials/content-type/" .Type ".html") ) (fileExists (print "themes/bilberry-hugo-theme/layouts/partials/content-type/" .Type ".html")) }}
             {{ partial (print "content-type/" .Type ".html") (dict "ctx" . "template_type" "single") }}
         {{ else }}
@@ -8,7 +8,9 @@
         {{ end }}
     </div>
 
-    <div class="article-wrapper">
+    {{ partial "plugin/share.html" . }}
+
+    <div class="article-wrapper article-position article-list">
         <a class="bubble" href="#">
             <i class="fas fa-fw fa-ad"></i>
         </a>
@@ -17,7 +19,7 @@
     </div>
 
     {{ if ( .Params.showComments | default true ) }}
-    <div class="article-wrapper">
+    <div class="article-wrapper article-position article-list">
     <a class="bubble" href="#comments-container">
         <i class="fas fa-fw fa-comment"></i>
     </a>

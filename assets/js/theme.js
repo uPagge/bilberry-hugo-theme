@@ -116,6 +116,26 @@ $(document).ready(function () {
 
     // Magnific Popup for images within articles to zoom them
     // Rendered with Asciidoc
+    $('.featured-image>img').magnificPopup({
+        type: "image",
+        image: {
+            verticalFit: true,
+            titleSrc: function (item) {
+                return item.el.parent().find('figcaption').text();
+            }
+        },
+        zoom: {
+            enabled: true
+        },
+        callbacks: {
+            elementParse: function(item) {
+                item.src = item.el.attr('data-feature-origin')
+            }
+        }
+    });
+
+    // Magnific Popup for images within articles to zoom them
+    // Rendered with Asciidoc
     $('.image-block>img').magnificPopup({
         type: "image",
         image: {
@@ -131,12 +151,6 @@ $(document).ready(function () {
             elementParse: function(item) {
                 item.src = item.el.attr('src')
             }
-        },
-        // https://github.com/dimsemenov/Magnific-Popup/pull/1017
-        // Enabled popup only when image size is greater than content area
-        disableOn: function(e) {
-            let img = e.target;
-            return img.naturalWidth > img.clientWidth;
         }
     });
 

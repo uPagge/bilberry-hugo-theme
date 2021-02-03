@@ -27,17 +27,18 @@
         z-index: 10;
     }
 
-    .article-wrapper {
+    .article-list {
+        padding-top: 50px;
+    }
+
+    .article-position {
         display: flex;
         justify-content: flex-end;
-        padding-top: 50px;
         min-height: 90px;
         position: relative;
+    }
 
-        // Move the left circle all the way down to the end of the article-wrapper
-        &.single {
-            padding-bottom: 2.5em;
-        }
+    .article-wrapper {
 
         .bubble {
             position: absolute;

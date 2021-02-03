@@ -24,6 +24,5 @@
     {{ end }}
 
     {{ partial "default-content.html" (dict "ctx" .ctx "template_type" .template_type "noMetaShow" $noMetaShow) }}
-    {{ partial "plugin/share.html" .ctx }}
     {{ partial "article-footer.html" .ctx }}
 </article>

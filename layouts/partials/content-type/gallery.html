@@ -6,9 +6,6 @@
 {{ $noFullImage := or $noMetaShow (ne .ctx.Title "") (ne .ctx.Content "" ) (eq .ctx.Params.Page.Share.enable true)}}
 
 <article class="gallery" {{ if and (ne .ctx.Params.singlePhoto true) (ne $noFullImage true) }} style="padding-bottom: 35px" {{ end }}>
-    {{ if eq .ctx.Params.singlePhoto true }}
-    {{ partial "featured-image-gallery.html" (dict "ctx" .ctx "noFullImage" $noFullImage) }}
-    {{ else }}
     {{ if and (isset .ctx.Params "gallery") (ne .ctx.Params.gallery "") }}
         <div class="flexslider" {{ if eq .noFullImage false }} style="height: 100%; padding-bottom: 30px" {{ end }}>
             <ul class="slides">
@@ -34,9 +31,7 @@
     {{ else }}
         {{ partial "featured-image.html" .ctx }}
     {{ end }}
-    {{ end }}
 
     {{ partial "default-content.html" (dict "ctx" .ctx "template_type" .template_type "noMetaShow" $noMetaShow) }}
-    {{ partial "plugin/share.html" .ctx }}
     {{ partial "article-footer.html" .ctx }}
 </article>

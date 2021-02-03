@@ -1,14 +1,16 @@
-{{ with .Params.tags }}
+{{ $hiddenTags := or (eq .Params.Page.hiddenTags true) (eq .Params.tags nil) }}
+
+{{ if eq $hiddenTags false }}
 <div class="footer">
 {{ else }}
 <div class="footer no-tags">
 {{ end }}
 
-    {{ with .Params.tags }}
+    {{ if eq $hiddenTags false }}
         <div class="tags">
             <i class="fa fa-tags"></i>
             <div class="links">
-                {{ range . }}
+                {{ range .Params.tags }}
                     {{ $urlValue := replace . " " "-" | lower}}
                     {{ with $.Site.GetPage (printf "/tags/%s" $urlValue) }}
                     <a href="{{ .Permalink }}">{{ .Title }}</a>

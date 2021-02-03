@@ -1,17 +1,17 @@
 {{ if not .Params.Page.hiddenFeatureImage }}
 <div class="featured-image">
 {{ if .Resources.GetMatch "featured-image" }}
-        <a href="{{ .Permalink }}">
+
             {{ if and (.Site.Params.resizeImages | default true) (.Params.resizeImages | default true) }}
-                <img src="{{ ((.Resources.GetMatch "featured-image").Fill "700x350 q95").RelPermalink }}" alt="">
+                <img data-feature-origin="{{ (.Resources.GetMatch "featured-image").RelPermalink }}" src="{{ ((.Resources.GetMatch "featured-image").Fill "700x350 q95").RelPermalink }}" alt="">
             {{ else }}
-                <img src="{{ (.Resources.GetMatch "featured-image").RelPermalink }}" alt="">
+                <img data-feature-origin="{{ (.Resources.GetMatch "featured-image").RelPermalink }}" src="{{ (.Resources.GetMatch "featured-image").RelPermalink }}" alt="">
             {{ end }}
-        </a>
+
 {{ else if and (isset .Params "featured-image") (ne .Params.featuredImage "") }}
-        <a href="{{ .ctx.Permalink }}">
+
             <img src="{{ .ctx.Params.featuredImage | relURL }}" alt="">
-        </a>
+
 {{ end }}
 </div>
 {{ end }}

@@ -29,6 +29,7 @@ article {
 
     .featured-image {
         width: 100%;
+        line-height: 0;
 
         img {
             width: 100%;
@@ -113,13 +114,14 @@ article {
         }
 
         a.more {
-            display: block;
             margin: 2.5rem 0 1rem;
-            color: $highlight-color;
+            color: $headline-font;
             font-size: 1.125em;
             text-decoration: none;
             font-style: normal;
-            border-bottom: none;
+            border: 2px solid;
+            padding: 10px;
+            border-radius: 10px;
 
             &:hover {
                 color: $continue-reading-hover-color;
@@ -437,7 +439,6 @@ article {
 }
 
 #comments-container  {
-    margin-left: 100px;
     padding-bottom: 1.2em;
     padding-left: 10px;
     padding-right: 10px;
