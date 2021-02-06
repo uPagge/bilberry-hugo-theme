@@ -115,6 +115,28 @@
         width: 700px;
     }
 
+    .external-profiles {
+        font-size: 20px;X
+
+        // Workaround to avoid conflicts with Adblock
+        // See: https://github.com/Lednerb/bilberry-hugo-theme/issues/95
+        .fa-facebook-adblock-proof:before {
+            content:"\f09a";
+        }
+
+        .fa-twitter-adblock-proof:before {
+            content:"\f099";
+        }
+
+        .fa-google-plus-official-adblock-proof:before {
+            content:"\f2b3";
+        }
+
+        .fa-youtube-adblock-proof:before {
+            content:"\f167";
+        }
+    }
+
     @import "share-icon";
 
     @import "topnav";
@@ -130,4 +152,5 @@
     @import "footer";
 
     @import "responsive";
+
 }

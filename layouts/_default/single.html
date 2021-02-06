@@ -1,14 +1,24 @@
 {{ define "main" }}
 <div class="main container">
-    <div class="article-wrapper article-position article-list u-cf single">
-        {{  if or (fileExists (print "layouts/partials/content-type/" .Type ".html") ) (fileExists (print "themes/bilberry-hugo-theme/layouts/partials/content-type/" .Type ".html")) }}
-            {{ partial (print "content-type/" .Type ".html") (dict "ctx" . "template_type" "single") }}
-        {{ else }}
-            {{ partial "content-type/article.html" (dict "ctx" . "template_type" "single") }}
-        {{ end }}
-    </div>
 
-    {{ partial "plugin/share.html" . }}
+    {{ if ne .Params.Series nil }}
+    {{ range $key, $taxonomy := .Site.Taxonomies.series }}
+    {{ if in $.Params.Series $key }}
+    {{ range $taxonomy.Pages }}
+    {{ if eq .Title $.Title}}
+    {{ partial "single.content.html" .}}
+    {{ else }}
+    {{ partial "article-series.html" . }}
+    {{ end }}
+    {{ end }}
+    {{ end }}
+    {{ end }}
+
+    {{ else }}
+
+    {{ partial "single.content.html" .}}
+
+    {{ end }}
 
     <div class="article-wrapper article-position article-list">
         <a class="bubble" href="#">
@@ -20,15 +30,17 @@
 
     {{ if ( .Params.showComments | default true ) }}
     <div class="article-wrapper article-position article-list">
-    <a class="bubble" href="#comments-container">
-        <i class="fas fa-fw fa-comment"></i>
-    </a>
-        <div id="comments-container" class="container-box">
+        <a class="bubble" href="#comments-container">
+            <i class="fas fa-fw fa-comment"></i>
+        </a>
+        <div id="comments-container" class="container-box" style="width: 680px;">
             {{ template "_internal/disqus.html" . }}
             {{ partial "commento.html" . }}
             {{ partial "remark42.html" . }}
         </div>
     </div>
     {{ end }}
+
+
 </div>
 {{ end }}

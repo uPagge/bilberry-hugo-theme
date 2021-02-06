@@ -31,15 +31,7 @@
         {{ end }}
 
         <div class="right">
-            {{ if .Site.Params.showSocialMedia | default true }}
-            <div class="external-profiles">
-                <strong>{{ i18n "socialMedia" }}</strong>
 
-                {{ range .Site.Params.socialMediaLinks }}
-                <a href="{{ .link }}" target="_blank"><i class="{{ .icon }}"></i></a>
-                {{ end }}
-            </div>
-            {{ end }}
 
             {{ if and (.Site.Params.showFooterLanguageChooser | default true) (gt .Site.Languages 1) }}
             {{- $.Scratch.Set "language" .Language -}}

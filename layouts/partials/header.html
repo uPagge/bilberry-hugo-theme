@@ -31,7 +31,16 @@
                 {{ with .Site.Params.Subtitle }}
                     <span class="subtitle">{{ . }}</span>
                 {{ end }}
+
+                {{ if .Site.Params.showSocialMedia | default true }}
+                <div class="external-profiles">
+                {{ range .Site.Params.socialMediaLinks }}
+                <a href="{{ .link }}" target="_blank"><i class="{{ .icon }}"></i></a>
+                {{ end }}
             </div>
+                {{ end }}
+            </div>
+
 
             {{ if and (gt .Site.Languages 1) (.Site.Params.showHeaderLanguageChooser | default true) }}
                 {{- $language := .Language -}}

@@ -108,6 +108,12 @@ article {
             }
         }
 
+        .meta-series {
+            margin-bottom: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
         a {
             border-bottom: 1.5px dashed;
             color: $highlight-color;
