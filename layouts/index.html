@@ -1,5 +1,5 @@
 {{ define "main" }}
-<div class="main container">
+<div class="main main-hr container">
 {{ $allNonExcludedPages := where .Site.RegularPages "Params.excludefromindex" "==" nil }}
 {{ $allNonExcludedPagesNotTypePage := (where .Site.RegularPages "Type" "ne" "page" | intersect $allNonExcludedPages) }}
 

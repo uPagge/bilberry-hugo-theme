@@ -31,10 +31,7 @@
     {{- end -}}
     {{ if ( .Site.Params.Comment.enable | default false ) }}
     <div class="article-wrapper article-position article-list">
-        <a class="bubble" href="#comments-container">
-            <i class="fas fa-fw fa-comment"></i>
-        </a>
-        <div id="comments-container" class="container-box" style="width: 680px;">
+        <div id="comments-container" class="container-box" style="width: 900px;">
             {{ template "_internal/disqus.html" . }}
             {{ partial "commento.html" . }}
             {{ partial "remark42.html" . }}

@@ -1,7 +1,5 @@
 {{- $share := .Params.Page.Share | default $.Site.Params.Page.Share | default dict -}}
 {{- if $share.enable -}}
-<div class="article-wrapper article-position">
-    <div style="width: 700px">
 
 <div class="post-info-share">
     {{- /* 000: Telegram */ -}}
@@ -264,6 +262,4 @@
     {{- end -}}
 </div>
 
-    </div>
-</div>
 {{- end -}}

@@ -1,8 +1,8 @@
 <div class="article-wrapper article-position article-list u-cf single">
-    {{  if or (fileExists (print "layouts/partials/content-type/" .Type ".html") ) (fileExists (print "themes/bilberry-hugo-theme/layouts/partials/content-type/" .Type ".html")) }}
-    {{ partial (print "content-type/" .Type ".html") (dict "ctx" . "template_type" "single") }}
+    {{  if or (fileExists (print "layouts/partials/content-type-single/" .Type ".html") ) (fileExists (print "themes/bilberry-hugo-theme/layouts/partials/content-type-single/" .Type ".html")) }}
+    {{ partial (print "content-type-single/" .Type ".html") (dict "ctx" . "template_type" "single") }}
     {{ else }}
-    {{ partial "content-type/article.html" (dict "ctx" . "template_type" "single") }}
+    {{ partial "content-type-single/article.html" (dict "ctx" . "template_type" "single") }}
     {{ end }}
 </div>
 
