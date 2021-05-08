@@ -1,4 +1,4 @@
-<div class="article-wrapper article-position article-list u-cf single">
+<div class="article-wrapper article-position article-list u-cf single" style="display: block">
     {{  if or (fileExists (print "layouts/partials/content-type-single/" .Type ".html") ) (fileExists (print "themes/bilberry-hugo-theme/layouts/partials/content-type-single/" .Type ".html")) }}
     {{ partial (print "content-type-single/" .Type ".html") (dict "ctx" . "template_type" "single") }}
     {{ else }}

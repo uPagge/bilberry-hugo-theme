@@ -55,7 +55,6 @@
         {{ end }}
     </div>
     {{ end }}
-
     {{ if or (eq .template_type "single") (.ctx.Params.noSummary | default $.ctx.Site.Params.Page.NoSummary) }}
         {{ if and (gt .ctx.WordCount .ctx.Site.Params.tocMinWordCount ) (.ctx.Params.toc) }}
             <h2>{{ i18n "tableOfContents" | default "tableOfContents" }}</h2>

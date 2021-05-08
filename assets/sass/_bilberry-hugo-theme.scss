@@ -5,7 +5,7 @@
     background-color: $page-background-color;
     font-family: $content-font;
     color: $text-color;
-    font-size: 1.6em;
+    font-size: 1.75em;
 
     h1,
     h2,
@@ -134,6 +134,41 @@
 
         .fa-youtube-adblock-proof:before {
             content:"\f167";
+        }
+    }
+
+    .content-break {
+        width: 100%;
+
+        figure {
+            margin-left: 0;
+            width: 100%;
+
+            img {
+                width: 100%;
+            }
+
+        }
+    }
+
+    figure {
+        margin-left: 0;
+        margin-right: 0;
+        text-align: center;
+
+        .image-caption:not(:empty) {
+            box-sizing: border-box;
+            border-left: none;
+            width: 90%;
+            padding: 10px 0 0 0;
+            margin: 0 auto;
+            text-align: center;
+            font-weight: 900;
+            color: #666;
+            font-size: 95%;
+
+            min-width: 20%;
+            display: inline-block;
         }
     }
 

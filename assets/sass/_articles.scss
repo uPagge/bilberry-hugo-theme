@@ -36,6 +36,11 @@ article {
     }
 
     .content {
+
+        :first-child {
+            margin-top: 0;
+        }
+
         padding: 2em;
 
         h1 {
@@ -441,14 +446,16 @@ article {
             margin-bottom: 0;
         }
     }
+
+    .split-post {
+        margin-left: -2em;
+        margin-right: -2em;
+    }
+
 }
 
 article:not([class*="article-single"]) {
     width: ($site-width - 100px);
-}
-
-.article-single {
-    width: 900px;
 }
 
 #comments-container  {
