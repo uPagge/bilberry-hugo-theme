@@ -150,19 +150,15 @@ article {
         }
 
         blockquote {
-            background-color: #f6f6f6;
-            font-family: $headline-font;
-            margin: 1.5em 0;
-            padding: 2em;
-            border-left: 0.5em solid #ededed;
-            font-size: 1.1em;
-
-            cite {
-                text-transform: uppercase;
-                font-style: normal;
-                font-weight: bold;
-                font-size: 0.9em;
-            }
+            font-family: 'Ubuntu', Helvetica, Verdana, sans-serif;
+            display: block;
+            text-align: left;
+            max-width: 800px;
+            margin: 20px 0 40px;
+            color: #999;
+            box-sizing: border-box;
+            border-left: solid 2px #999;
+            padding: 0 15px;
 
             p:last-child {
                 margin-bottom: 0;
@@ -450,6 +446,59 @@ article {
     .split-post {
         margin-left: -2em;
         margin-right: -2em;
+    }
+
+    .block-media_left {
+        width: 50%;
+        float: left;
+        text-align: left;
+        padding-right: 0;
+        margin-right: 40px;
+    }
+
+    .block-media_right {
+        width: 50%;
+        float: right;
+        padding-right: 0;
+        margin-left: 40px;
+    }
+
+    .block-media {
+        margin-bottom: 2.5rem;
+    }
+
+    .block-media_column {
+
+        display: inline-block;
+        width: 100%;
+
+        .content-column {
+            display: block;
+            float: left;
+            width: 50%;
+            box-sizing: border-box;
+
+            img {
+                width: 100%;
+            }
+
+            :first-child {
+                margin-top: 0;
+            }
+
+        }
+
+        .content-column:first-child {
+            border-right: solid 5px transparent;
+        }
+
+    }
+
+    em {
+        background: #fff3bc;
+        font-style: inherit;
+        padding: 4px 7px 6px;
+        box-decoration-break: clone;
     }
 
 }

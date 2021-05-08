@@ -5,19 +5,19 @@
 
 {{- $alt := .Alt | default $src -}}
 
+<div class="image-block" style="width: 100%">
 {{- if .Linked -}}
-    <a target="_blank" href="{{ .Src | safeURL }}" title="{{ .Title | default $alt }}" {{ with .Rel }} rel="{{ . }}"{{ end }}>
-        <img loading="lazy" decoding="async"
+        <img style="width: 100%" data-feature-origin="{{ .Src | safeURL }}" loading="lazy" decoding="async"
              {{ with .Class }}class="{{ . }}"{{ end }}
              src="{{ .Src | safeURL }}"
             alt="{{ $alt }}"{{ with .Height }} height="{{ . }}"{{ end }}{{ with .Width }} width="{{ . }}"{{ end }}
         />
-    </a>
 {{- else -}}
-    <img loading="lazy" decoding="async"
+    <img style="width: 100%" data-feature-origin="{{ .Src | safeURL }}" loading="lazy" decoding="async"
          {{ with .Class }}class="{{ . }}"{{ end }}
          src="{{ .Src | safeURL }}"
          alt="{{ $alt }}"
          title="{{ .Title | default $alt }}"{{ with .Height }} height="{{ . }}"{{ end }}{{ with .Width }} width="{{ . }}"{{ end }}
     />
 {{- end -}}
+</div>
