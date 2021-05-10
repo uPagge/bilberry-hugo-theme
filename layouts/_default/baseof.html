@@ -88,6 +88,11 @@
             <link rel="stylesheet" href="{{ . | absURL }}">
         {{ end }}
     {{ end }}
+
+    {{- /* Advertising */ -}}
+    {{- with .Site.Params.Advertising.Google.Client -}}
+    <script data-ad-client="{{ . }}" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    {{- end -}}
 </head>
 
 <body class="bilberry-hugo-theme">
@@ -103,11 +108,6 @@
     {{ partial "footer.html" . }}
 
     {{ template "_internal/google_analytics_async.html" . }}
-
-    {{- /* Advertising */ -}}
-    {{- with .Site.Params.Advertising.Google.Client -}}
-    <script data-ad-client="{{ . }}" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    {{- end -}}
 
     {{ partial "yandex_analytics.html" . }}
 
