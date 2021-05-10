@@ -3,7 +3,7 @@
 {{ if .Resources.GetMatch "featured-image" }}
 {{ $imageOriginal := .Resources.GetMatch (printf "%s" ("featured-image" | safeURL)) }}
             {{ if and (.Site.Params.resizeImages | default true) (.Params.resizeImages | default true) }}
-                <img data-feature-origin="{{ (.Resources.GetMatch "featured-image").RelPermalink }}" src="{{ ((.Resources.GetMatch "featured-image").Fill "700x350 q95").RelPermalink }}" alt="">
+                <img data-feature-origin="{{ (.Resources.GetMatch "featured-image").RelPermalink }}" src="{{ ((.Resources.GetMatch "featured-image").Fill "700x350 q95 jpg").RelPermalink }}" alt="">
             {{ else }}
             {{ if lt 1600 $imageOriginal.Width }}
             {{ $imageOriginal = ($imageOriginal.Resize "1600x q100").Permalink }}
