@@ -64,11 +64,12 @@
         {{ .ctx.Content }}
 
     {{ else }}
+    <div class="summary">
         {{ .ctx.Summary }}
-
-        {{ if .ctx.Truncated }}
-            <a href="{{ .ctx.Permalink }}" class="more">{{ i18n "continueReading" }}</a>
-        {{ end }}
+    </div>
+    <div class="more-block">
+        <a href="{{ .ctx.Permalink }}" class="more">{{ i18n "continueReading" }}</a>
+    </div>
     {{ end }}
 </div>
 {{ end }}
