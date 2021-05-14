@@ -6,12 +6,16 @@
 {{- end -}}
 {{ $imageOriginal := .Page.Resources.GetMatch (printf "%s" (.Destination | safeURL)) }}
 {{ $miniImage := $imageOriginal }}
-{{ if $miniImage }}
-{{ if lt 2000 $miniImage.Width }}
-{{ $miniImage = ($miniImage.Resize "2000x q100 jpg").Permalink }}
-{{ end }}
+{{ if $imageOriginal }}
+    {{ if lt 2000 $miniImage.Width }}
+        {{ $miniImage = ($miniImage.Resize "2000x q100 jpg").RelPermalink }}
+    {{ else }}
+        {{ $miniImage = $miniImage.RelPermalink }}
+    {{ end }}
+    {{ $imageOriginal = $imageOriginal.RelPermalink}}
 {{ else }}
-{{ $miniImage = .Destination }}
+    {{ $imageOriginal = .Destination }}
+    {{ $minImage = .Destination }}
 {{ end }}
 {{- if $figcap -}}
 <figure class="render-image">
