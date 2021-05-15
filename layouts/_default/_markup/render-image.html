@@ -15,7 +15,7 @@
     {{ $imageOriginal = $imageOriginal.RelPermalink}}
 {{ else }}
     {{ $imageOriginal = .Destination }}
-    {{ $minImage = .Destination }}
+    {{ $miniImage = $imageOriginal }}
 {{ end }}
 {{- if $figcap -}}
 <figure class="render-image">
