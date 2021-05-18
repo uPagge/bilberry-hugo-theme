@@ -22,7 +22,7 @@
                     {{ if and ( .Site.Params.enableMomentJs | default true ) (le (now.Sub (time .PublishDate)).Hours 336)  }}
                     <span class="date moment">{{ .PublishDate.Format "02 Jan 06 15:04 -0700" }}</span>
                     {{ else }}
-                    <span class="date">{{ .PublishDate.Format (.ctx.Site.Params.DateFormat | default "2006-01-02") }}</span>
+                    <span class="date">{{ .PublishDate.Format (.Site.Params.DateFormat | default "2006-01-02") }}</span>
                     {{ end }}
 
                     {{ if .Params.readingTime }}
