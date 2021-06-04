@@ -22,10 +22,25 @@
 
     {{- with .Site.Params.Advertising.Google.Slot -}}
     <div class="article-wrapper article-position article-list">
-        <a class="bubble" href="#">
-            <i class="fas fa-fw fa-ad"></i>
-        </a>
-        <div class="container-box">
+        <div class="container-box" style="width: 900px;">
+            {{ with $.Site.Params.Advertising.Google.Slot }}
+            <aside>
+                <div class="">
+                    <div class="no-adb">
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <ins class="adsbygoogle"
+                             style="display:block; text-align:center;"
+                             data-ad-layout="in-article"
+                             data-ad-format="fluid"
+                             data-ad-client="{{- with $.Site.Params.Advertising.Google.Client -}}{{ . }}{{ end }}"
+                             data-ad-slot="{{ . }}"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                </div>
+            </aside>
+            {{ end }}
         </div>
     </div>
     {{- end -}}
